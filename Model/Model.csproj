@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Dania.Courses.Databases2020.MVP.Model</AssemblyName>
+    <RootNamespace>Dania.Courses.Databases2020.MVP.Model</RootNamespace>
+  </PropertyGroup>
+
+</Project>
