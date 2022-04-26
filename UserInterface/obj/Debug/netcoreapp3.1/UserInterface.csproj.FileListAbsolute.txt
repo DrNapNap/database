@@ -35,3 +35,11 @@ C:\Users\nap\Documents\GitHub\database\UserInterface\obj\Debug\netcoreapp3.1\Use
 C:\Users\nap\Documents\GitHub\database\UserInterface\obj\Debug\netcoreapp3.1\UserInterface.dll
 C:\Users\nap\Documents\GitHub\database\UserInterface\obj\Debug\netcoreapp3.1\UserInterface.pdb
 C:\Users\nap\Documents\GitHub\database\UserInterface\obj\Debug\netcoreapp3.1\UserInterface.genruntimeconfig.cache
+C:\Users\nap\Documents\GitHub\database\UserInterface\bin\Debug\netcoreapp3.1\System.Data.SQLite.dll
+C:\Users\nap\Documents\GitHub\database\UserInterface\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Users\nap\Documents\GitHub\database\UserInterface\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Users\nap\Documents\GitHub\database\UserInterface\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Users\nap\Documents\GitHub\database\UserInterface\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\SQLite.Interop.dll
+C:\Users\nap\Documents\GitHub\database\UserInterface\bin\Debug\netcoreapp3.1\database.dll
+C:\Users\nap\Documents\GitHub\database\UserInterface\bin\Debug\netcoreapp3.1\database.pdb
+C:\Users\nap\Documents\GitHub\database\UserInterface\bin\Debug\netcoreapp3.1\Content\test.xnb

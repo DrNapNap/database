@@ -253,9 +253,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nap\\Documents\\GitHub\\database\\Model\\Model.csproj",
-      "projectName": "Dania.Courses.Databases2020.MVP.Model",
-      "projectPath": "C:\\Users\\nap\\Documents\\GitHub\\database\\Model\\Model.csproj",
+      "projectUniqueName": "C:\\Users\\nap\\Documents\\GitHub\\database\\Model\\database.csproj",
+      "projectName": "database",
+      "projectPath": "C:\\Users\\nap\\Documents\\GitHub\\database\\Model\\database.csproj",
       "packagesPath": "C:\\Users\\nap\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\nap\\Documents\\GitHub\\database\\Model\\obj\\",
       "projectStyle": "PackageReference",

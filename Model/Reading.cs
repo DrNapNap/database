@@ -1,68 +1,87 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Data.SQLite;
+using System.Linq;
 
 namespace database
 {
-    public class Reading 
+    public class Reading : IAdventurerRepository
     {
 
         private readonly IDatabaseProvider provider;
-
+        private readonly IAdventurerMapper mapper;
         private IDbConnection connection;
 
-        public Reading(IDatabaseProvider provider)
+        public Reading(IDatabaseProvider provider, IAdventurerMapper mapper)
         {
             this.provider = provider;
+            this.mapper = mapper;
+        }
+
+        public void CreateDatabaseTables()
+        {
+
+            //CREATE TABLE IF NOT EXISTS 
+            var cmd = new SQLiteCommand($"CREATE TABLE IF NOT EXISTS administrator (Id INTEGER PRIMARY KEY, Buget VARCHAR(50));", (SQLiteConnection)connection);
+
+
+            cmd.ExecuteNonQuery();
+
+
+
+            ////DELETE
+            //var cmdd = new SQLiteCommand($"DELETE FROM characters;", (SQLiteConnection)connection);
+
+            //cmdd.ExecuteNonQuery();
+
 
         }
 
-        private void CreateDatabaseTables()
+
+        public List<Character> GetAllAdmin()
         {
-            var cmd = new SQLiteCommand($"CREATE TABLE IF NOT EXISTS characters (Id INTEGER PRIMARY KEY, Name VARCHAR(50), Experience INTEGER);", (SQLiteConnection)connection);
+            var cmd = new SQLiteCommand($"SELECT  * from administrator", (SQLiteConnection)connection);
+
+            var reader = cmd.ExecuteReader();
+
+            var result = mapper.MapCharactersFromReader(reader);
+            return result;
+
+        }
+
+
+
+
+
+
+        public void AddCharacter( int Buget)
+        {
+            var cmd = new SQLiteCommand($"INSERT INTO administrator ( Buget) VALUES ({Buget})", (SQLiteConnection)connection);
             cmd.ExecuteNonQuery();
         }
 
 
 
-        public event Action <int> OnActualUpdate;
-        private int actluel;
 
 
-        public int Actluel { get { return actluel; } set { actluel = value; PostActuaalUdated(); } }
-
-
-
-
-        private void PostActuaalUdated ()
+        public void Open()
         {
-            OnActualUpdate?.Invoke(GetVariance());
+
+            if (connection == null)
+            {
+                connection = provider.CreateConnection();
+            }
+            connection.Open();
+
+            CreateDatabaseTables();
         }
 
-
-        public int GetVariance()
+        public void Close()
         {
-            if (Actluel % 2 == 0)
-            {
-                return 0;
-            }
-            else
-            {
-                return 1;
-            }
+            connection.Close();
         }
 
-        public VarianceCategory GetVarianceCategory()
-        {
-            if (GetVariance() == 0)
-            {
-                return VarianceCategory.Normal;
-            }
-           else
-            {
-                return VarianceCategory.Severe;
-            }
-
-        }
 
     }
 }

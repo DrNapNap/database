@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "43q+wp/i3nz3Z4OmXjDEULTVcWjjYbHfJewAQdhPTqB5JtfnW2xU8u1HMx7yEHur2uycxkbVwDPLNib5szygvA==",
+  "dgSpecHash": "gBD94pFBJlTTjgqC8FCFoqbOEv+O0OOv1ZvM2sMA7P2bXzl5+j55noixgqFdD79jITeF9owixEi7xlNaG2lGSQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\nap\\Documents\\GitHub\\database\\UserInterface\\UserInterface.csproj",
   "expectedPackageFiles": [
@@ -39,6 +39,7 @@
     "C:\\Users\\nap\\.nuget\\packages\\sharpdx.mediafoundation\\4.0.1\\sharpdx.mediafoundation.4.0.1.nupkg.sha512",
     "C:\\Users\\nap\\.nuget\\packages\\sharpdx.xaudio2\\4.0.1\\sharpdx.xaudio2.4.0.1.nupkg.sha512",
     "C:\\Users\\nap\\.nuget\\packages\\sharpdx.xinput\\4.0.1\\sharpdx.xinput.4.0.1.nupkg.sha512",
+    "C:\\Users\\nap\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.115.5\\stub.system.data.sqlite.core.netstandard.1.0.115.5.nupkg.sha512",
     "C:\\Users\\nap\\.nuget\\packages\\system.appcontext\\4.1.0\\system.appcontext.4.1.0.nupkg.sha512",
     "C:\\Users\\nap\\.nuget\\packages\\system.buffers\\4.0.0\\system.buffers.4.0.0.nupkg.sha512",
     "C:\\Users\\nap\\.nuget\\packages\\system.collections\\4.0.11\\system.collections.4.0.11.nupkg.sha512",
@@ -47,6 +48,7 @@
     "C:\\Users\\nap\\.nuget\\packages\\system.componentmodel\\4.0.1\\system.componentmodel.4.0.1.nupkg.sha512",
     "C:\\Users\\nap\\.nuget\\packages\\system.componentmodel.annotations\\4.1.0\\system.componentmodel.annotations.4.1.0.nupkg.sha512",
     "C:\\Users\\nap\\.nuget\\packages\\system.console\\4.0.0\\system.console.4.0.0.nupkg.sha512",
+    "C:\\Users\\nap\\.nuget\\packages\\system.data.sqlite.core\\1.0.115.5\\system.data.sqlite.core.1.0.115.5.nupkg.sha512",
     "C:\\Users\\nap\\.nuget\\packages\\system.diagnostics.debug\\4.0.11\\system.diagnostics.debug.4.0.11.nupkg.sha512",
     "C:\\Users\\nap\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.0.0\\system.diagnostics.diagnosticsource.4.0.0.nupkg.sha512",
     "C:\\Users\\nap\\.nuget\\packages\\system.diagnostics.fileversioninfo\\4.0.0\\system.diagnostics.fileversioninfo.4.0.0.nupkg.sha512",
