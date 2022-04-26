@@ -9,7 +9,7 @@ namespace database
         void AddAdmin(int experience);
         void AddTornament(string tournamentName , string country, int amountofteam, int money);
 
-        
+        void Addteam(string teamsname, int cvrnumber);
         //Character FindCharacter(string name);
         List<Character> GetAllAdmin();
         void Open();
