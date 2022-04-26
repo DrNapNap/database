@@ -1,9 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using database;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
-using database;
-using System.Data.SQLite;
 using System.Collections.Generic;
 
 namespace UserInterface
@@ -33,15 +31,17 @@ namespace UserInterface
             var mapper = new AdventurerMapper();
             var provider = new SQLiteDatabaseProvider("Data Source=cyklingmanager.db;Version=3;new=true");
 
-            
+
             var repo = new Reading(provider, mapper);
             repo.Open();
 
-            repo.AddCharacter( 2983);
-            repo.AddCharacter( 2344);
-            repo.AddCharacter( 12);
+            repo.AddAdmin(2983);
+            repo.AddAdmin(2344);
+            repo.AddAdmin(12);
 
-             result = repo.GetAllAdmin();
+            repo.AddTornament("Tour De France" , "Frankrig", 50 , 2000000000);
+
+            result = repo.GetAllAdmin();
 
 
 
@@ -81,13 +81,13 @@ namespace UserInterface
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
 
-      
-                    spriteBatch.DrawString(text, "Price: " + result[0].Buget.ToString(), new Vector2(0, 20), Color.Red, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 1f);
 
-            
+            spriteBatch.DrawString(text, "Price: " + result[0].Buget.ToString(), new Vector2(0, 20), Color.Red, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 1f);
 
 
-            
+
+
+
             spriteBatch.End();
 
             // TODO: Add your drawing code here

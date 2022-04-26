@@ -6,7 +6,10 @@ namespace database
 {
    public interface IAdventurerRepository
     {
-        void AddCharacter(int experience);
+        void AddAdmin(int experience);
+        void AddTornament(string tournamentName , string country, int amountofteam, int money);
+
+        
         //Character FindCharacter(string name);
         List<Character> GetAllAdmin();
         void Open();

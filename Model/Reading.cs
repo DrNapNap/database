@@ -24,8 +24,11 @@ namespace database
 
             //CREATE TABLE IF NOT EXISTS 
             var cmd = new SQLiteCommand($"CREATE TABLE IF NOT EXISTS administrator (Id INTEGER PRIMARY KEY, Buget VARCHAR(50));", (SQLiteConnection)connection);
+            var cmdd = new SQLiteCommand($"CREATE TABLE IF NOT EXISTS tournament (tournamentName TINYTEXT, country TINYTEXT, amountofteam VARCHAR(30), money VARCHAR(50));", (SQLiteConnection)connection);
 
 
+
+            cmdd.ExecuteNonQuery();
             cmd.ExecuteNonQuery();
 
 
@@ -37,6 +40,18 @@ namespace database
 
 
         }
+        public void AddTornament(string tournamentName, string Country, int amountofteam, int money)
+        {
+            var cmd = new SQLiteCommand($"INSERT INTO tournament (tournamentName,country,amountofteam,money) VALUES ('{tournamentName}', '{Country}',{amountofteam},{money})", (SQLiteConnection)connection);
+            cmd.ExecuteNonQuery();
+        }
+
+        public void AddAdmin(int Buget)
+        {
+            var cmd = new SQLiteCommand($"INSERT INTO administrator ( Buget) VALUES ({Buget})", (SQLiteConnection)connection);
+            cmd.ExecuteNonQuery();
+        }
+
 
 
         public List<Character> GetAllAdmin()
@@ -55,11 +70,7 @@ namespace database
 
 
 
-        public void AddCharacter( int Buget)
-        {
-            var cmd = new SQLiteCommand($"INSERT INTO administrator ( Buget) VALUES ({Buget})", (SQLiteConnection)connection);
-            cmd.ExecuteNonQuery();
-        }
+ 
 
 
 
