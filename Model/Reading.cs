@@ -1,68 +1,106 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Data.SQLite;
+using System.Linq;
 
 namespace database
 {
-    public class Reading 
+    public class Reading : IAdventurerRepository
     {
 
         private readonly IDatabaseProvider provider;
-
+        private readonly IAdventurerMapper mapper;
         private IDbConnection connection;
 
-        public Reading(IDatabaseProvider provider)
+        public Reading(IDatabaseProvider provider, IAdventurerMapper mapper)
         {
             this.provider = provider;
-
+            this.mapper = mapper;
         }
 
-        private void CreateDatabaseTables()
+        public void CreateDatabaseTables()
         {
-            var cmd = new SQLiteCommand($"CREATE TABLE IF NOT EXISTS characters (Id INTEGER PRIMARY KEY, Name VARCHAR(50), Experience INTEGER);", (SQLiteConnection)connection);
+
+            //CREATE TABLE IF NOT EXISTS 
+            var createadministrator = new SQLiteCommand($"CREATE TABLE IF NOT EXISTS administrator (Id INTEGER PRIMARY KEY, Buget VARCHAR(50));", (SQLiteConnection)connection);
+            var createtournament = new SQLiteCommand($"CREATE TABLE IF NOT EXISTS tournament (tournamentName TINYTEXT, country TINYTEXT, amountofteam VARCHAR(30), money VARCHAR(50));", (SQLiteConnection)connection);
+
+            var createteam = new SQLiteCommand($"CREATE TABLE IF NOT EXISTS team (teamsname TINYTEXT, cvrnumber VARCHAR(50));", (SQLiteConnection)connection);
+
+
+
+            createteam.ExecuteNonQuery();
+            createtournament.ExecuteNonQuery();
+            createadministrator.ExecuteNonQuery();
+
+
+
+            ////DELETE
+            //var cmdd = new SQLiteCommand($"DELETE FROM characters;", (SQLiteConnection)connection);
+
+            //cmdd.ExecuteNonQuery();
+
+
+        }
+        public void AddTornament(string tournamentName, string Country, int amountofteam, int money)
+        {
+            var cmd = new SQLiteCommand($"INSERT INTO tournament (tournamentName,country,amountofteam,money) VALUES ('{tournamentName}', '{Country}',{amountofteam},{money})", (SQLiteConnection)connection);
+            cmd.ExecuteNonQuery();
+        }
+
+        public void AddAdmin(int Buget)
+        {
+            var cmd = new SQLiteCommand($"INSERT INTO administrator ( Buget) VALUES ({Buget})", (SQLiteConnection)connection);
+            cmd.ExecuteNonQuery();
+        }
+
+        public void Addteam(string teamsname , int cvrnumber)
+        {
+            var cmd = new SQLiteCommand($"INSERT INTO team (cvrnumber,teamsname) VALUES ('{cvrnumber}' , '{teamsname}')", (SQLiteConnection)connection);
             cmd.ExecuteNonQuery();
         }
 
 
-
-        public event Action <int> OnActualUpdate;
-        private int actluel;
-
-
-        public int Actluel { get { return actluel; } set { actluel = value; PostActuaalUdated(); } }
-
-
-
-
-        private void PostActuaalUdated ()
+        public List<Character> GetAllAdmin()
         {
-            OnActualUpdate?.Invoke(GetVariance());
+            var cmd = new SQLiteCommand($"SELECT  * from administrator", (SQLiteConnection)connection);
+
+            var reader = cmd.ExecuteReader();
+
+            var result = mapper.MapCharactersFromReader(reader);
+            return result;
+
         }
 
 
-        public int GetVariance()
+
+
+
+
+ 
+
+
+
+
+
+        public void Open()
         {
-            if (Actluel % 2 == 0)
+
+            if (connection == null)
             {
-                return 0;
+                connection = provider.CreateConnection();
             }
-            else
-            {
-                return 1;
-            }
+            connection.Open();
+
+            CreateDatabaseTables();
         }
 
-        public VarianceCategory GetVarianceCategory()
+        public void Close()
         {
-            if (GetVariance() == 0)
-            {
-                return VarianceCategory.Normal;
-            }
-           else
-            {
-                return VarianceCategory.Severe;
-            }
-
+            connection.Close();
         }
+
 
     }
 }

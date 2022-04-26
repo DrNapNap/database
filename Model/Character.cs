@@ -4,8 +4,11 @@ using System.Text;
 
 namespace database
 {
-    public class AssementRecord
+    public class Character
     {
-        public List<Reading> readings;
+        public int Id { get; set; }
+
+        public int Buget { get; set; }
+
     }
 }

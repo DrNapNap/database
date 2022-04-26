@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{7326CF99-854E-4DE6-BD73-E433D4BF89F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "database", "Model\database.csproj", "{7326CF99-854E-4DE6-BD73-E433D4BF89F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterface", "UserInterface\UserInterface.csproj", "{4364DB64-1715-4414-8F1F-FE354C300A41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserInterface", "UserInterface\UserInterface.csproj", "{4364DB64-1715-4414-8F1F-FE354C300A41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
