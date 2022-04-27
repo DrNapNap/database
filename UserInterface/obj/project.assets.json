@@ -7457,25 +7457,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nap\\.nuget\\packages\\": {},
+    "C:\\Users\\45527\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nap\\Documents\\database\\UserInterface\\UserInterface.csproj",
+      "projectUniqueName": "C:\\Ihor\\Uddannelse 2021\\EaDania Projekter\\Databaser\\Project DataBaser\\DataBaser\\UserInterface\\UserInterface.csproj",
       "projectName": "UserInterface",
-      "projectPath": "C:\\Users\\nap\\Documents\\database\\UserInterface\\UserInterface.csproj",
-      "packagesPath": "C:\\Users\\nap\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nap\\Documents\\database\\UserInterface\\obj\\",
+      "projectPath": "C:\\Ihor\\Uddannelse 2021\\EaDania Projekter\\Databaser\\Project DataBaser\\DataBaser\\UserInterface\\UserInterface.csproj",
+      "packagesPath": "C:\\Users\\45527\\.nuget\\packages\\",
+      "outputPath": "C:\\Ihor\\Uddannelse 2021\\EaDania Projekter\\Databaser\\Project DataBaser\\DataBaser\\UserInterface\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\nap\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\45527\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -7491,8 +7493,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\nap\\Documents\\database\\Model\\database.csproj": {
-              "projectPath": "C:\\Users\\nap\\Documents\\database\\Model\\database.csproj"
+            "C:\\Ihor\\Uddannelse 2021\\EaDania Projekter\\Databaser\\Project DataBaser\\DataBaser\\Model\\database.csproj": {
+              "projectPath": "C:\\Ihor\\Uddannelse 2021\\EaDania Projekter\\Databaser\\Project DataBaser\\DataBaser\\Model\\database.csproj"
             }
           }
         }
@@ -7534,7 +7536,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
       }
     }
   }

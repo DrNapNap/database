@@ -39,17 +39,15 @@ namespace UserInterface
             repo.AddAdmin(2344);
             repo.AddAdmin(12);
 
-            repo.AddTornament("Tour De France" , "Frankrig", 50 , 2000000000);
+            repo.AddTornament("Tour De France" , "Frankrig", 50 , 2000000000, 29542764);
+            repo.AddTornament("Danmark rundt", "Danmark", 30, 500000, 87364522);
+            repo.AddTornament("Giro d’Italia", "Italien", 50, 1500000000, 56982365);
 
             result = repo.GetAllAdmin();
 
-
-
             repo.Close();
 
-
             // TODO: Add your initialization logic here
-
 
             base.Initialize();
         }
