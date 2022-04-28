@@ -16,7 +16,8 @@ namespace UserInterface
 
         private Texture2D back;
         private SpriteFont text;
-        private List<Character> result;
+        private Character result;
+      
 
         public GameWorld()
         {
@@ -34,14 +35,23 @@ namespace UserInterface
 
             var repo = new Reading(provider, mapper);
             repo.Open();
+           
 
-            repo.AddAdmin(2983);
-            repo.AddAdmin(2344);
-            repo.AddAdmin(12);
+            repo.AddAdmin(10000000);
 
-            repo.AddTornament("Tour De France" , "Frankrig", 50 , 2000000000);
 
-            result = repo.GetAllAdmin();
+            result = repo.GetAllAdmin(10000000);
+
+
+
+            repo.AddTeam(29542764,"Four lions");
+            repo.AddTeam(87364522,"DK Vikings");
+            repo.AddTeam(56982365,"Arsenal");
+
+           
+                repo.AddTornament("Tour De France", "Frankrig", 50, 2000000000 );
+            
+
 
 
 
@@ -81,8 +91,13 @@ namespace UserInterface
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
 
+            
+                spriteBatch.DrawString(text, "Buget: " + result.Buget.ToString(), new Vector2(0, 20), Color.Red, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 1f);
 
-            spriteBatch.DrawString(text, "Price: " + result[0].Buget.ToString(), new Vector2(0, 20), Color.Red, 0f, Vector2.Zero, 1.5f, SpriteEffects.None, 1f);
+            
+
+
+
 
 
 

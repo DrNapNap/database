@@ -6,7 +6,7 @@ namespace database
 {
     public class Character
     {
-        public int Id { get; set; }
+      
 
         public int Buget { get; set; }
 

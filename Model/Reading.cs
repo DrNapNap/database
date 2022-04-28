@@ -21,37 +21,51 @@ namespace database
 
         public void CreateDatabaseTables()
         {
+            var createAdministrator = new SQLiteCommand($"drop table if exists Administrator");
+            var createTournament = new SQLiteCommand($"drop table if exists Tournament");
+            var createTeam = new SQLiteCommand($"drop table if exists Team");
+            var createRider = new SQLiteCommand($"drop table if exists Rider");
 
-            //CREATE TABLE IF NOT EXISTS 
-            var createadministrator = new SQLiteCommand($"CREATE TABLE IF NOT EXISTS administrator (Id INTEGER PRIMARY KEY, Buget VARCHAR(50));", (SQLiteConnection)connection);
-            var createtournament = new SQLiteCommand($"CREATE TABLE IF NOT EXISTS tournament (tournamentName TINYTEXT, country TINYTEXT, amountofteam VARCHAR(30), money VARCHAR(50));", (SQLiteConnection)connection);
+            //CREATE TABLES IF NOT EXISTS 
+            createAdministrator = new SQLiteCommand($"CREATE TABLE IF NOT EXISTS Administrator (Id INTEGER PRIMARY KEY, Buget VARCHAR(50));", (SQLiteConnection)connection);
 
-            var createteam = new SQLiteCommand($"CREATE TABLE IF NOT EXISTS team (teamsname TINYTEXT, cvrnumber VARCHAR(50));", (SQLiteConnection)connection);
+             createTeam = new SQLiteCommand($"CREATE TABLE IF NOT EXISTS Team (CVRnumber, Teamsname TINYTEXT, AdministratorId Integer, foreign key (AdministratorId) references Administrator(Id));", (SQLiteConnection)connection);
 
+             createTournament = new SQLiteCommand($"CREATE TABLE IF NOT EXISTS Tournament (TournamentName TINYTEXT, Country TINYTEXT, AmountOfTeam VARCHAR(30), Money VARCHAR(50), TeamCVRnumber integer, foreign key (TeamCVRnumber) references Team (CVRnumber));", (SQLiteConnection)connection);
+             createRider = new SQLiteCommand($"CREATE TABLE IF NOT EXISTS Rider(CPRnumber INTEGER PRIMARY KEY, FirstName TINYTEXT, LastName TINYTEXT, Abilities Integer, Power Integer, Endurance Integer, Speed Integer, Price integer, TeamCVRnumber integer, foreign key (TeamCVRnumber) references Team (CVRnumber));", (SQLiteConnection)connection);
 
-
-            createteam.ExecuteNonQuery();
-            createtournament.ExecuteNonQuery();
-            createadministrator.ExecuteNonQuery();
-
-
-
-            ////DELETE
-            //var cmdd = new SQLiteCommand($"DELETE FROM characters;", (SQLiteConnection)connection);
-
-            //cmdd.ExecuteNonQuery();
-
+            createAdministrator.ExecuteNonQuery();
+            createTeam.ExecuteNonQuery();
+            createRider.ExecuteNonQuery();
+            createTournament.ExecuteNonQuery();
+         
 
         }
-        public void AddTornament(string tournamentName, string Country, int amountofteam, int money)
+
+
+        
+
+        public void AddTeam(int CVRnumber, string Teamsname)
         {
-            var cmd = new SQLiteCommand($"INSERT INTO tournament (tournamentName,country,amountofteam,money) VALUES ('{tournamentName}', '{Country}',{amountofteam},{money})", (SQLiteConnection)connection);
+            var cmd = new SQLiteCommand($"INSERT INTO Team (CVRnumber,Teamsname) VALUES ('{CVRnumber}','{Teamsname}')", (SQLiteConnection)connection);
+            cmd.ExecuteNonQuery();
+        }
+
+        public void AddTornament(string tournamentName, string country, int amountOfTeam, int money)
+        {
+            var cmd = new SQLiteCommand($"INSERT INTO Tournament (TournamentName, Country, AmountOfTeam, Money) VALUES ('{tournamentName}', '{country}', {amountOfTeam}, {money})", (SQLiteConnection)connection);
+            cmd.ExecuteNonQuery();
+        }
+
+        public void AddRider(int cprNumber, string firstName, string lastName, int abilities, int power, int endurance, int speed, int price, int teamCVRnumber)
+        {
+            var cmd = new SQLiteCommand($"INSERT INTO Rider (CPRnumber, FirstName, LastName, Abilities, Power, Endurance, Speed, Price, TeamCVRnumber) VALUES ({cprNumber}, '{firstName}', '{lastName}', {abilities}, {power}, {endurance}, {speed}, {price}, {teamCVRnumber})", (SQLiteConnection)connection);
             cmd.ExecuteNonQuery();
         }
 
         public void AddAdmin(int Buget)
         {
-            var cmd = new SQLiteCommand($"INSERT INTO administrator ( Buget) VALUES ({Buget})", (SQLiteConnection)connection);
+            var cmd = new SQLiteCommand($"INSERT INTO administrator (Buget) VALUES ({Buget})", (SQLiteConnection)connection);
             cmd.ExecuteNonQuery();
         }
 
@@ -62,26 +76,16 @@ namespace database
         }
 
 
-        public List<Character> GetAllAdmin()
-        {
-            var cmd = new SQLiteCommand($"SELECT  * from administrator", (SQLiteConnection)connection);
+    
 
-            var reader = cmd.ExecuteReader();
+    public Character GetAllAdmin(int Buget)
+    {
+        var cmd = new SQLiteCommand($"SELECT * from Administrator WHERE Buget = '{Buget}'", (SQLiteConnection)connection);
+        var reader = cmd.ExecuteReader();
 
-            var result = mapper.MapCharactersFromReader(reader);
-            return result;
-
-        }
-
-
-
-
-
-
- 
-
-
-
+        var result = mapper.MapCharactersFromReader(reader).First();
+        return result;
+    }
 
 
         public void Open()

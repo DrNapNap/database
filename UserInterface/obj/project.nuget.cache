@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qbhtjtx7RkAnBU/+4Qm3WcTfwIuQoaAwkKBR9+zevlPmrSJG6+yuViS0MyLybRfg4D80GYw0C8ziaJbPklim5Q==",
+  "dgSpecHash": "gBD94pFBJlTTjgqC8FCFoqbOEv+O0OOv1ZvM2sMA7P2bXzl5+j55noixgqFdD79jITeF9owixEi7xlNaG2lGSQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nap\\Documents\\database\\UserInterface\\UserInterface.csproj",
+  "projectFilePath": "C:\\Users\\nap\\Documents\\GitHub\\database\\UserInterface\\UserInterface.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nap\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Users\\nap\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",
@@ -126,7 +126,8 @@
     "C:\\Users\\nap\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
     "C:\\Users\\nap\\.nuget\\packages\\system.xml.xmldocument\\4.0.1\\system.xml.xmldocument.4.0.1.nupkg.sha512",
     "C:\\Users\\nap\\.nuget\\packages\\system.xml.xpath\\4.0.1\\system.xml.xpath.4.0.1.nupkg.sha512",
-    "C:\\Users\\nap\\.nuget\\packages\\system.xml.xpath.xdocument\\4.0.1\\system.xml.xpath.xdocument.4.0.1.nupkg.sha512"
+    "C:\\Users\\nap\\.nuget\\packages\\system.xml.xpath.xdocument\\4.0.1\\system.xml.xpath.xdocument.4.0.1.nupkg.sha512",
+    "C:\\Users\\nap\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.21\\microsoft.netcore.app.host.win-x64.3.1.21.nupkg.sha512"
   ],
   "logs": []
 }

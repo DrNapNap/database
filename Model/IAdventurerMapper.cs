@@ -9,6 +9,5 @@ namespace database
     {
         List<Character> MapCharactersFromReader(SQLiteDataReader reader);
 
-
     }
 }
