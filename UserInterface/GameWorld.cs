@@ -10,11 +10,7 @@ namespace UserInterface
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-        private Rectangle mainFrame;
 
-
-
-        private Texture2D back;
         private SpriteFont text;
         private Character result;
       

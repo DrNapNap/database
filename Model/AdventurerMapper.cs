@@ -10,13 +10,15 @@ namespace database
 
         public List<Character> MapCharactersFromReader(SQLiteDataReader reader)
         {
+
+
             var result = new List<Character>();
+
+
             while (reader.Read())
             {
-
-
-
-                result.Add(new Character() { Buget = 1000000000 });
+             
+                result.Add(new Character() { Buget = 1000000 });
             }
             return result;
         }
