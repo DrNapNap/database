@@ -38,7 +38,6 @@ namespace database
             createTeam.ExecuteNonQuery();
             createRider.ExecuteNonQuery();
             createTournament.ExecuteNonQuery();
-         
 
         }
 
@@ -75,10 +74,14 @@ namespace database
             cmd.ExecuteNonQuery();
         }
 
+        public void Add(string teamsname, int cvrnumber)
+        {
+            var cmd = new SQLiteCommand($"INSERT INTO team (cvrnumber,teamsname) VALUES ('{cvrnumber}' , '{teamsname}')", (SQLiteConnection)connection);
+            cmd.ExecuteNonQuery();
+        }
 
-    
 
-    public Character GetAllAdmin(int Buget)
+        public Character GetAllAdmin(int Buget)
     {
         var cmd = new SQLiteCommand($"SELECT * from Administrator WHERE Buget = '{Buget}'", (SQLiteConnection)connection);
         var reader = cmd.ExecuteReader();
